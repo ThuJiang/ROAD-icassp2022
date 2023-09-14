@@ -1,0 +1,7 @@
+1 基于本地现有分支构建新分支，并上传到远程 & 建立映射关系
+git checkout -b local_branch_name
+git push --set-upstream origin remote_branch_name
+
+2 基于远程现有分支构建本地新分支，并上传到远程
+（1）创建并切换到本地新分支 + 自动构建和远程分支的映射关系：git checkout -b local_branch_name origin/remote_branch_name
+（2）创建本地新分支但是不切换到新分支，不会自动构建映射关系：git fetch origin remote_branch_name:local_branch_name，如果需要进一步构建与远程分支remote_branch_x（远程不存在则自动新建）的映射关系，需要git push --set-upstream origin remote_branch_x
